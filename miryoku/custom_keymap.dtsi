@@ -1,11 +1,18 @@
 / {
     behaviors {
+      u_gresc: u_gresc {
+        compatible = "zmk,behavior-mod-morph";
+        #binding-cells = <0>;
+        bindings = <&kp ESC>, <&kp GRAVE>;
+        mods = <(MOD_LGUI|MOD_LSFT|MOD_RGUI|MOD_RSFT)>;
+        keep-mods = <(MOD_LGUI|MOD_LSFT)>;
+      };
       u_lt_gresc: u_lt_gresc {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         tapping-term-ms = <U_TAPPING_TERM>;
         flavor = "tap-preferred";
-        bindings = <&mo>, <&gresc>;
+        bindings = <&mo>, <&u_gresc>;
       };
     };
   };
