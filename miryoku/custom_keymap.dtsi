@@ -1,0 +1,12 @@
+/ {
+    behaviors {
+      u_lt_gresc: u_lt_gresc {
+        compatible = "zmk,behavior-hold-tap";
+        #binding-cells = <2>;
+        tapping-term-ms = <U_TAPPING_TERM>;
+        flavor = "tap-preferred";
+        bindings = <&mo>, <&gresc>;
+      };
+    };
+  };
+  
